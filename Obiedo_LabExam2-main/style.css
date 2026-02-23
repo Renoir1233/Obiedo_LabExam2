@@ -1,0 +1,720 @@
+/* ============================================
+   MODERN DESIGN SYSTEM v2.0
+   Student Management System - Enhanced UI/UX
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --success-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    --bg-primary: #f5f5f5;
+    --bg-secondary: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #666666;
+    --border-color: #dddddd;
+    --shadow-sm: 0 2px 8px rgba(102, 126, 234, 0.08);
+    --shadow-md: 0 4px 20px rgba(102, 126, 234, 0.12);
+    --shadow-lg: 0 10px 40px rgba(102, 126, 234, 0.18);
+    --radius-sm: 10px;
+    --radius-md: 14px;
+    --radius-lg: 18px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-primary);
+    min-height: 100vh;
+    color: var(--text-primary);
+    text-align: center;
+    padding: 0;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   AUTH PAGES (Login & Register) - Enhanced
+   ============================================ */
+.auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: #667eea;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 460px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    animation: slideUp 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.auth-header {
+    background: var(--primary-gradient);
+    padding: 40px 40px 35px;
+    text-align: center;
+    position: relative;
+}
+
+.auth-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+}
+
+.auth-header h2 {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.auth-header p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 15px;
+    margin: 0;
+    font-weight: 400;
+}
+
+.auth-body {
+    padding: 40px 40px 40px;
+}
+
+/* ============================================
+   FORM PAGES (Add Student, etc.) - Enhanced
+   ============================================ */
+.form-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: var(--bg-primary);
+}
+
+.form-card {
+    width: 100%;
+    max-width: 580px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    animation: slideUp 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-header {
+    background: var(--primary-gradient);
+    padding: 28px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-header h2 {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-header a {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 20px;
+    border-radius: var(--radius-sm);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.form-header a:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.form-body {
+    padding: 40px 40px 40px;
+}
+
+/* ============================================
+   FORM ELEMENTS (shared) - Enhanced
+   ============================================ */
+.form-group {
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    letter-spacing: 0.2px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 14px 16px;
+    margin: 0;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-family: inherit;
+    background: #fafafa;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #667eea;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+    transform: translateY(-1px);
+}
+
+.form-group input::placeholder {
+    color: #999999;
+}
+
+.btn-full {
+    width: 100%;
+    padding: 14px 28px;
+    background: var(--primary-gradient);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 8px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 14px rgba(102, 126, 234, 0.3);
+}
+
+.btn-full:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-full:active {
+    transform: translateY(0);
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 2px solid #eeeeee;
+    font-size: 15px;
+    color: var(--text-secondary);
+}
+
+.form-footer a {
+    color: #667eea;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.form-footer a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+/* ============================================
+   DASHBOARD LAYOUT - Enhanced
+   ============================================ */
+.container-wide {
+    width: 96%;
+    max-width: 1280px;
+    margin: 30px auto;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    text-align: left;
+}
+
+/* --- Top Bar - Enhanced --- */
+.top-bar {
+    background: var(--bg-secondary);
+    padding: 24px 32px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+    border-left: 4px solid #667eea;
+}
+
+.top-bar h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-family: 'Poppins', sans-serif;
+}
+
+.top-bar .role-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    margin-left: 12px;
+    vertical-align: middle;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+/* --- Nav Links - Enhanced --- */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-links a {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #667eea;
+    background: #f0f4ff;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.nav-links a:hover {
+    background: #e0e7ff;
+    text-decoration: none;
+    transform: translateY(-2px);
+    border-color: #667eea;
+}
+
+.nav-links a.btn-logout {
+    color: #e53e3e;
+    background: #fff5f5;
+    border-color: transparent;
+}
+
+.nav-links a.btn-logout:hover {
+    background: #fed7d7;
+    border-color: #e53e3e;
+}
+
+/* --- Card Panel (table, content) - Enhanced --- */
+.card {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    padding: 32px 36px;
+    border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.card h3 {
+    margin: 0 0 24px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ============================================
+   BACKUP PAGE - Enhanced
+   ============================================ */
+.backup-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 20px;
+    background: var(--bg-primary);
+}
+
+.backup-card {
+    width: 100%;
+    max-width: 800px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    animation: slideUp 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.backup-header {
+    background: var(--primary-gradient);
+    padding: 28px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.backup-header h2 {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.backup-header a {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 20px;
+    border-radius: var(--radius-sm);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.backup-header a:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.backup-body {
+    padding: 40px 40px 40px;
+    text-align: left;
+}
+
+/* ============================================
+   TYPOGRAPHY - Enhanced
+   ============================================ */
+h2 {
+    margin-bottom: 16px;
+    color: var(--text-primary);
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+h3 {
+    margin: 28px 0 14px;
+    color: var(--text-primary);
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ============================================
+   FORM INPUTS (global fallback) - Enhanced
+   ============================================ */
+input,
+select {
+    width: 100%;
+    padding: 14px 16px;
+    margin: 6px 0;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-family: inherit;
+    display: block;
+    background: #fafafa;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #667eea;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+    transform: translateY(-1px);
+}
+
+button {
+    padding: 12px 28px;
+    background: var(--primary-gradient);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(102, 126, 234, 0.3);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.btn-delete {
+    background: none;
+    color: #e53e3e;
+    border: 2px solid #fc8181;
+    padding: 7px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0;
+    border-radius: var(--radius-sm);
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-delete:hover {
+    background: #fff5f5;
+    border-color: #e53e3e;
+    color: #c53030;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(229, 62, 62, 0.2);
+}
+
+/* ============================================
+   ALERTS - Enhanced
+   ============================================ */
+.error {
+    color: #c53030;
+    background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+    border: 2px solid #fc8181;
+    border-left: 5px solid #e53e3e;
+    padding: 14px 18px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 24px;
+    font-size: 14px;
+    text-align: left;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(229, 62, 62, 0.15);
+}
+
+.success {
+    color: #2f855a;
+    background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
+    border: 2px solid #9ae6b4;
+    border-left: 5px solid #38a169;
+    padding: 14px 18px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 24px;
+    font-size: 14px;
+    text-align: left;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(56, 161, 105, 0.15);
+}
+
+/* ============================================
+   TABLE - Enhanced
+   ============================================ */
+.table-wrapper {
+    overflow-x: auto;
+    margin-top: 0;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th {
+    background: #f0f0f0;
+    color: #333333;
+    padding: 14px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    border-bottom: 2px solid #dddddd;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+}
+
+table td {
+    padding: 16px 16px;
+    font-size: 14px;
+    border-bottom: 1px solid #eeeeee;
+    color: var(--text-secondary);
+    text-align: left;
+}
+
+table tbody tr {
+    transition: all 0.2s ease;
+}
+
+table tbody tr:hover {
+    background: #f9f9f9;
+    transform: scale(1.001);
+}
+
+table tbody tr td:first-child {
+    font-weight: 700;
+    color: #667eea;
+    font-family: 'Poppins', sans-serif;
+}
+
+.no-data {
+    padding: 60px 16px !important;
+    color: #999999;
+    font-style: normal;
+    text-align: center !important;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* ============================================
+   MISC - Enhanced
+   ============================================ */
+a {
+    color: #667eea;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+code {
+    background: #f0f0f0;
+    padding: 5px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    display: inline-block;
+    word-break: break-all;
+    font-family: 'Consolas', 'Fira Code', monospace;
+    color: #333333;
+    border: 1px solid #dddddd;
+}
+
+p {
+    margin: 6px 0;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+ul {
+    text-align: left;
+    margin: 12px 20px;
+}
+
+ul li {
+    margin: 8px 0;
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Legacy fallback for .container */
+.container {
+    width: 480px;
+    margin: 80px auto;
+    padding: 40px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+    .auth-card,
+    .form-card,
+    .backup-card {
+        max-width: 100%;
+    }
+    
+    .auth-body,
+    .form-body,
+    .backup-body {
+        padding: 30px 24px;
+    }
+    
+    .top-bar {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+    
+    .nav-links {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    
+    .table-wrapper {
+        border-radius: 0;
+    }
+    
+    table th,
+    table td {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+}
+
+/* ============================================
+   ANIMATIONS & EFFECTS
+   ============================================ */
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus visible for accessibility */
+*:focus-visible {
+    outline: 3px solid rgba(102, 126, 234, 0.5);
+    outline-offset: 2px;
+}
